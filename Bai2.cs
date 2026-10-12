@@ -8,8 +8,8 @@ namespace Bai_2
     {
         public static void Main2()
         {
-            //Bai1(-1000, -777777, -1000);
             Bai2(4);
+            //55,8,9,5
         }
         static void Bai2(int n)
         {

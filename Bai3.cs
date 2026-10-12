@@ -5,7 +5,7 @@ namespace BaiTapThucHanh01
 {
     class Program
     {
-        public static void Main()
+        public static void Main3()
         {
             Console.Write("Nhap n: ");
             int n = int.Parse(Console.ReadLine());
