@@ -6,7 +6,7 @@ namespace Bai_2
 {
     public class Bai_2
     {
-        public static void Main()
+        public static void Main2()
         {
             //Bai1(-1000, -777777, -1000);
             Bai2(4);

@@ -1,26 +1,33 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Diagnostics; // Thêm thư viện này để dùng Stopwatch
 
-namespace Cấu_trúc_dữ_liệu
+namespace BaiTapThucHanh01
 {
-    internal class Bai_3
+    class Program
     {
         public static void Main()
         {
-            Bai3a(5);
-            Bai3b(77);
-        }
-        static void Bai3a(int n)
-        {
+            Console.Write("Nhap n: ");
+            int n = int.Parse(Console.ReadLine());
+            //-2 1 - 3 4 - 1 2 1 - 5 4
+
+
             int[] a = new int[n];
             for (int i = 0; i < n; i++)
             {
-                Console.WriteLine($"Nhap phan tu thu {i + 1}: ");
+                Console.Write($"Nhap phan tu thu {i + 1}: ");
                 a[i] = int.Parse(Console.ReadLine());
-
             }
+            Bai3a(a);
+            Bai3b(a);
+        }
+
+        static void Bai3a(int[] a)
+        {
+            Stopwatch sw = Stopwatch.StartNew();
+
             int maxsum = int.MinValue;
+            int n = a.Length;
             for (int i = 0; i < n; i++)
             {
                 int sum1 = 0;
@@ -30,23 +37,26 @@ namespace Cấu_trúc_dữ_liệu
                     if (sum1 > maxsum) maxsum = sum1;
                 }
             }
-        }
-        static void Bai3b(int n)
-        {
-            int[] a = new int[n];
-            for (int i = 0; i < n; i++)
-            {
-                Console.WriteLine($"Nhap phan tu thu {i + 1}: ");
-                a[i] = int.Parse(Console.ReadLine());
 
-            }
+            sw.Stop();
+
+            Console.WriteLine($"[Bai 3a - Θ(n²)] Max Sum: {maxsum} | Thoi gian: {sw.Elapsed.TotalMilliseconds} ms");
+        }
+
+        static void Bai3b(int[] a)
+        {
+            Stopwatch sw = Stopwatch.StartNew();
+
             int maxsum = a[0];
             int currentsum = a[0];
-            for (int i = 1; i < n; i++)
+            for (int i = 1; i < a.Length; i++)
             {
                 currentsum = Math.Max(a[i], currentsum + a[i]);
                 maxsum = Math.Max(maxsum, currentsum);
             }
+            sw.Stop();
+
+            Console.WriteLine($"[Bai 3b - Θ(n)]  Max Sum: {maxsum} | Thoi gian: {sw.Elapsed.TotalMilliseconds} ms");
         }
     }
 }

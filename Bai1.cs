@@ -8,7 +8,7 @@ namespace Bai_1
 {
     public class Bai_1
     {
-        public static void Main()
+        public static void Main1()
         {
             //Bai1(-1000, -777777, -1000);
            
